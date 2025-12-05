@@ -14,6 +14,8 @@ The [Visx](https://visx.airbnb.tech/) library was selected for data visualizatio
 
 ### Implemented features
 
+The chart components are generic implementations that are decoupled from any specific data structure.
+
 *   Display a conversion rate (conversionRate) line chart for all variations, showing all values as percentages.
 *   On hover, show a vertical line and a popup with daily data.
 *   At least one variation must always be selected.
