@@ -6,7 +6,7 @@ import type {DefaultTooltipProps} from './types';
 import styles from './styles.module.css';
 
 export const DefaultTooltip = <T extends object>(props: DefaultTooltipProps<T>) => {
-    const {labels, data, titleColor, valueColor, labelColor} = props;
+    const {labels, data, valueColor, labelColor} = props;
     const {
         mainKey: _mainKey,
         mainKeyFormat: _mainKeyFormat,
@@ -37,7 +37,6 @@ export const DefaultTooltip = <T extends object>(props: DefaultTooltipProps<T>) 
         }
 
         keys[labelIndex]?.forEach((key, index) => {
-            console.log(data?.datumByKey);
             const label = tooltipSubLabel ? `${tooltipLabel}, ${tooltipSubLabel[index]}` : tooltipLabel;
             const value =
                 typeof key === 'function'
@@ -67,7 +66,7 @@ export const DefaultTooltip = <T extends object>(props: DefaultTooltipProps<T>) 
 
                 return (
                     <div key={labelIndex} className={styles.tooltip}>
-                        {keys[labelIndex]?.map((key, index) => {
+                        {keys[labelIndex]?.map((_, index) => {
                             return (
                                 <TooltipItem key={index} color={color}>
                                     <span style={labelColor ? {color: labelColor} : {}} className={styles.label}>

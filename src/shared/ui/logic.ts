@@ -1,4 +1,4 @@
-import dayjs, {Dayjs} from 'dayjs';
+import dayjs from 'dayjs';
 import weekOfYear from 'dayjs/plugin/weekOfYear';
 import type {ChartStatistics, VariationChartDataSet} from '../api/types/types';
 import type {MinMax} from './types';
@@ -9,7 +9,7 @@ export function getAccessors<T extends object>(
     x: ((d: T) => number | string) | keyof T,
     y: ((d: T) => number | string) | keyof T,
 ) {
-    const xAccessor = typeof x === 'function' ? x : (d: T) => new Date(d[x]);
+    const xAccessor = typeof x === 'function' ? x : (d: T) => new Date(d[x] as string);
     const yAccessor = typeof y === 'function' ? y : (d: T) => d[y];
 
     return {
@@ -23,7 +23,7 @@ export function getSmoothAccessors<T extends object>(
     y: ((d: T) => number | string) | keyof T,
     offset: number,
 ) {
-    const xAccessor = typeof x === 'function' ? x : (d: T) => new Date(d[x]);
+    const xAccessor = typeof x === 'function' ? x : (d: T) => new Date(d[x] as string);
     const baseYAccessor = typeof y === 'function' ? (d: T) => y(d) as number : (d: T) => d[y] as number;
 
     const y0Accessor = (d: T) => (baseYAccessor(d) - offset < 0 ? 0 : baseYAccessor(d) - offset);

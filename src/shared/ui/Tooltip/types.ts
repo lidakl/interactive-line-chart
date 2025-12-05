@@ -12,7 +12,6 @@ interface TooltipCommonProps {
 
 export interface TooltipWithLabelsProps extends TooltipCommonProps {
     labels: (Record<string, string[]> | string)[];
-    titleColor?: string;
     valueColor?: string;
     labelColor?: string;
 }

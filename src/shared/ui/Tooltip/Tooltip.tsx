@@ -10,7 +10,6 @@ export function Tooltip<T extends object[]>(props: TooltipProps<T>) {
         labels,
         showVerticalLine = false,
         showHorizontalLine = false,
-        titleColor,
         valueColor,
         labelColor,
         children,
@@ -18,7 +17,7 @@ export function Tooltip<T extends object[]>(props: TooltipProps<T>) {
 
     const {keys: _keys} = useChartContext();
     const ids = Object.keys(_keys.current);
-    const keys = Object.values(_keys.current);
+    // const keys = Object.values(_keys.current);
 
     // if (labels && labels.length !== keys.length) {
     //     return null;
@@ -49,7 +48,6 @@ export function Tooltip<T extends object[]>(props: TooltipProps<T>) {
                     <DefaultTooltip
                         labels={labels}
                         data={tooltipData}
-                        titleColor={titleColor}
                         valueColor={valueColor}
                         labelColor={labelColor}
                     />

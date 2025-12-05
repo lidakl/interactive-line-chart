@@ -11,7 +11,6 @@ import {LineChart} from './shared/ui/LineChart/LineChart';
 import {aggregateChartData, getMinMax} from './shared/ui/logic';
 import {SmoothChart} from './shared/ui/SmoothChart/SmoothChart';
 import {StatisticsActions} from './shared/ui/StatisticsActions/StatisticsActions';
-import {StatisticsTooltip} from './shared/ui/Tooltip/StatisticsTooltip';
 import {Tooltip} from './shared/ui/Tooltip/Tooltip';
 import type {ChartSettings} from './shared/ui/types';
 // eslint-disable-next-line boundaries/no-unknown
@@ -28,7 +27,7 @@ const CHART_COLORS = [
 export function App() {
     const data = getRawStatistics();
     const chartData = convertRawStatisticsToChartData(data);
-    const chartDataFlat = chartData.flatMap((dataset) => dataset.data);
+    // const chartDataFlat = chartData.flatMap((dataset) => dataset.data);
     const variationOptions = chartData.map((item) => ({value: item.id, label: item.name}));
 
     const [settings, setSettings] = useState<ChartSettings>({
@@ -65,9 +64,6 @@ export function App() {
 
     const axesTickFormat = () => '';
 
-    console.log(filteredData);
-    console.log(CHART_COLORS);
-
     return (
         <div className={styles.container}>
             <div className={styles.actions}>
@@ -82,7 +78,7 @@ export function App() {
                 <GridColumns dashed count={10} />
                 <GridRows count={5} />
 
-                <AxisX hideTicks tickFormat={(v) => `${formatDate(v)}`} />
+                <AxisX hideTicks tickFormat={(v) => `${formatDate(v as unknown as string)}`} />
                 <AxisX hideTicks position="top" tickFormat={axesTickFormat} />
                 <AxisY hideTicks tickFormat={(v) => `${v}%`} count={5} />
                 <AxisY hideTicks position="right" tickFormat={axesTickFormat} />
