@@ -22,34 +22,41 @@
     --select-bg-color-focused: #0d6efd;
     --select-bg-color-remove: #e1dede;
 
-    --chart-line-color: #eaf0f6;
     --theme-icon-color: #333;
+
+    --chart-line-color: #eaf0f6;
     --y-chart-first: #46464f;
     --y-chart-second: #ff8346;
     --y-chart-third: #4142ef;
     --y-chart-fourth: #df57bc;
     --y-chart-fifth: #35bdad;
-
-    --icon-color: #5e5d67;
+    --chart-tooltip-color-primary: #333;
+    --chart-tooltip-color-secondary: #675f5d;
+    --chart-tooltip-icon-color: #5e5d67;
+    --chart-tooltip-bg: #fff;
+    --chart-tick-color: #918f9a;
 }
 
 :root[data-theme='dark'] {
     --bg-color: #000027;
 
     --select-bg: #1a1a3a;
-    --select-color: #ffffff;
+    --select-color: #fff;
     --select-border: #4e4e7a;
     --select-bg-color-active: #293b4e;
     --select-bg-color-selected: #2c3e50;
     --select-bg-color-focused: #2c3e50;
     --select-bg-color-remove: #283848;
 
-    --chart-line-color: #93919c6c;
     --theme-icon-color: #ffd700;
+
+    --chart-line-color: #93919c6c;
     --y-chart-first: #c7c5d0;
     --y-chart-third: #a1a3ff;
-
-    --icon-color: #ffffffd3;
+    --chart-tooltip-color-primary: #fff;
+    --chart-tooltip-color-secondary: #fff;
+    --chart-tooltip-icon-color: #ffffffd3;
+    --chart-tooltip-bg: #1a1a3a;
 }
 
 html {

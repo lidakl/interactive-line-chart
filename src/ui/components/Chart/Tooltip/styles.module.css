@@ -1,0 +1,82 @@
+.default {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    width: 230px;
+}
+
+.default:not(:last-child) {
+    margin-bottom: 0.5rem;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    padding-bottom: 12px;
+    margin-bottom: 8px;
+    gap: 8px;
+    border-bottom: 1px solid var(--chart-line-color);
+}
+
+.date {
+    font-size: 14px;
+}
+
+.item svg {
+    margin-right: 10px;
+    flex-shrink: 0;
+}
+
+.item > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.item span:last-child {
+    font-weight: bold;
+    color: var(--chart-tooltip-color-secondary);
+    white-space: nowrap;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    border: none;
+    padding: 8px 4px;
+    margin-bottom: 8px;
+    position: relative;
+}
+
+.item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    background:
+        linear-gradient(to right, var(--chart-line-color) 75%, rgba(255, 255, 255, 0) 0%) top left / 5px 1px repeat-x,
+        linear-gradient(to right, var(--chart-line-color) 75%, rgba(255, 255, 255, 0) 0%) bottom left / 5px 1px repeat-x,
+        linear-gradient(to bottom, var(--chart-line-color) 75%, rgba(255, 255, 255, 0) 0%) top left / 1px 5px repeat-y,
+        linear-gradient(to bottom, var(--chart-line-color) 75%, rgba(255, 255, 255, 0) 0%) top right / 1px 5px repeat-y;
+}
+
+.label {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.tooltip {
+    background-color: var(--chart-tooltip-bg) !important;
+}
+
+.tooltip .icon {
+    fill: var(--chart-tooltip-icon-color);
+}
+
+.tooltip span {
+    color: var(--chart-tooltip-color-primary);
+}
