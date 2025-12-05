@@ -1,7 +1,7 @@
 import {createContext, type ReactNode, type RefObject, useContext, useRef} from 'react';
 import type {AxisScale} from '@visx/axis';
 import type {ValueFormat} from '../Axes/types';
-import type {Key} from '../types';
+import type {Key} from './types';
 
 interface ChartContextData {
     width: number;
