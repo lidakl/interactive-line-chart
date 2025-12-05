@@ -1,0 +1,73 @@
+:root {
+    font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+
+    color-scheme: light dark;
+    color: rgba(255, 255, 255, 0.87);
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    --bg-color: #fff;
+
+    --select-bg: #fff;
+    --select-color: #333;
+    --select-border: #ccc;
+    --select-text-focused: #fff;
+    --select-bg-color-active: #0a58ca;
+    --select-bg-color-selected: #e6e6e6;
+    --select-bg-color-focused: #0d6efd;
+    --select-bg-color-remove: #e1dede;
+
+    --chart-line-color: #eaf0f6;
+    --theme-icon-color: #333;
+    --y-chart-first: #46464f;
+    --y-chart-second: #ff8346;
+    --y-chart-third: #4142ef;
+    --y-chart-fourth: #df57bc;
+    --y-chart-fifth: #35bdad;
+
+    --icon-color: #5e5d67;
+}
+
+:root[data-theme='dark'] {
+    --bg-color: #000027;
+
+    --select-bg: #1a1a3a;
+    --select-color: #ffffff;
+    --select-border: #4e4e7a;
+    --select-bg-color-active: #293b4e;
+    --select-bg-color-selected: #2c3e50;
+    --select-bg-color-focused: #2c3e50;
+    --select-bg-color-remove: #283848;
+
+    --chart-line-color: #93919c6c;
+    --theme-icon-color: #ffd700;
+    --y-chart-first: #c7c5d0;
+    --y-chart-third: #a1a3ff;
+
+    --icon-color: #ffffffd3;
+}
+
+html {
+    overflow: hidden !important;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+}
+
+select {
+    border: 1px solid var(--select-border);
+    background-color: var(--select-bg);
+    color: var(--select-color);
+}

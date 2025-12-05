@@ -1,0 +1,14 @@
+.actionsContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.group {
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+    flex-shrink: 0;
+}
